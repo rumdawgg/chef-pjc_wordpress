@@ -1,6 +1,6 @@
 #
 # Cookbook:: pjc_wordpress
-# Recipe:: default
+# Recipe:: _install_wordpress
 #
 # Copyright (C) 2017 Paul chicarello
 #
@@ -16,16 +16,3 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-include_recipe 'pjc_lamp::default'
-
-httpd_module 'ssl' do
-  action :create
-end
-
-httpd_service 'wordpress' do
-  instance 'wordpress'
-  servername 'www.computers.biz'
-  version '2.4'
-  action %i[create start]
-end
