@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'berkshelf'
+gem 'chefspec'
+gem 'foodcritic'
+gem 'kitchen-vagrant'
+gem 'pry'
+gem 'rake'
+gem 'rubocop'
+gem 'test-kitchen'

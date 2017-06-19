@@ -1,20 +1,17 @@
 name 'pjc_wordpress'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
-license 'All Rights Reserved'
+maintainer 'Paul Chicarello'
+maintainer_email 'paul@chicarello.com'
+license 'Apache-2.0'
 description 'Installs/Configures pjc_wordpress'
-long_description 'Installs/Configures pjc_wordpress'
 version '0.1.0'
-chef_version '>= 12.1' if respond_to?(:chef_version)
 
-# The `issues_url` points to the location where issues for this cookbook are
-# tracked.  A `View Issues` link will be displayed on this cookbook's page when
-# uploaded to a Supermarket.
-#
-# issues_url 'https://github.com/<insert_org_here>/pjc_wordpress/issues'
+%w[redhat centos scientific oracle].each do |el|
+  supports el, '>= 6.0'
+end
 
-# The `source_url` points to the development reposiory for this cookbook.  A
-# `View Source` link will be displayed on this cookbook's page when uploaded to
-# a Supermarket.
-#
-# source_url 'https://github.com/<insert_org_here>/pjc_wordpress'
+depends 'pjc_lamp', '~> 0.1.0'
+depends 'httpd', '~> 0.4.5'
+
+issues_url 'https://github.com/rumdawgg/chef-pjc_wordpress/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/rumdawgg/chef-pjc_wordpress' if respond_to?(:source_url)
+chef_version '>= 12.6' if respond_to?(:chef_version)
